@@ -24,7 +24,9 @@ var Modal = Component({
     onConfirm: React.PropTypes.func,
     onCancel: React.PropTypes.func,
     onClose: React.PropTypes.func,
-    bgTapClose: React.PropTypes.bool
+    bgTapClose: React.PropTypes.bool,
+    confirmText: React.PropTypes.string,
+    cancelText: React.PropTypes.string
   },
 
   getDefaultProps() {
@@ -37,7 +39,9 @@ var Modal = Component({
       animations: {
         modal: ['fade', 'scaleDown'],
         bg: 'fade'
-      }
+      },
+      confirmText: 'OK',
+      cancelText: 'Cancel'
     };
   },
 
