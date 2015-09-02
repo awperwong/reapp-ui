@@ -71,6 +71,8 @@ module.exports = Component({
       type,
       children,
       open,
+      confirmText,
+      cancelText,
       ...props } = this.props;
 
     if (open) {
@@ -85,13 +87,13 @@ module.exports = Component({
     switch (type) {
       case 'alert':
         buttons = [
-          <ModalButton confirm onTap={this.handleConfirm} stopPropagation>OK</ModalButton>
+          <ModalButton confirm onTap={this.handleConfirm} stopPropagation>{confirmText}</ModalButton>
         ];
         break;
       case 'confirm':
         buttons = [
-          <ModalButton styles={{ self: { borderLeft: 'none' } }} onTap={this.handleCancel} stopPropagation>Cancel</ModalButton>,
-          <ModalButton confirm onTap={this.handleConfirm} stopPropagation>OK</ModalButton>
+          <ModalButton styles={{ self: { borderLeft: 'none' } }} onTap={this.handleCancel} stopPropagation>{cancelText}</ModalButton>,
+          <ModalButton confirm onTap={this.handleConfirm} stopPropagation>{confirmText}</ModalButton>
         ];
         break;
       case 'custom':
